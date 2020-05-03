@@ -46,4 +46,26 @@ do
 done
 
 
-echo "values in ascending order  ${array[@]}";
+echo "Ascending order  ${array[@]}";
+for ((i = 0; i<4; i++)) 
+do
+
+    for((j = 0; j<4-1; j++)) 
+    do
+
+      k=$(($j+1));
+        if [ ${array[$j]} -lt ${array[$k]} ] 
+        then
+            # swap
+
+ 
+            temp=${array[j]} ;
+            array[$j]=${array[k]};   
+            array[$k]=$temp ;
+        fi
+    done
+  
+
+done
+
+echo "Descending order  ${array[@]}"
